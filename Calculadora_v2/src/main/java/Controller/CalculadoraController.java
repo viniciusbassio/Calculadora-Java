@@ -15,7 +15,7 @@ public class CalculadoraController {
     public CalculadoraController(){
     Total = 0.00;
     }
-    public Double RealizaOperacao(EnumOperacao operacao,Double valor){
+    public Double RealizaOperacao(EnumOperacao operacao,Double valor, char origem){
         if(operacao.equals(EnumOperacao.SOMA)){
             Total += valor;
         }
@@ -26,7 +26,18 @@ public class CalculadoraController {
             Total /= valor;
         }
         else if(operacao.equals(EnumOperacao.MULTIPLICACAO)){
+            if(origem == 'M')
+            {
+               Total = 1.0;
+               Total *= valor;
+            }
+            else{
+                System.out.println(Total);
+                System.out.println(valor);
+               
             Total *= valor;
+             System.out.println(Total);
+            }
         }
         return Total;
     }

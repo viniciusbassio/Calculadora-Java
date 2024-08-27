@@ -295,32 +295,34 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
-        calculadoraController.RealizaOperacao(EnumOperacao.SOMA, StringToDouble(Visor.getText()));
+        calculadoraController.RealizaOperacao(EnumOperacao.SOMA, StringToDouble(Visor.getText()),'S');
         ultimaOperacao = EnumOperacao.SOMA;
         Limpa();
     }//GEN-LAST:event_btnSomaActionPerformed
 
     private void btnSubtraiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtraiActionPerformed
-        calculadoraController.RealizaOperacao(EnumOperacao.SUBTRACAO, StringToDouble(Visor.getText()));
+        calculadoraController.RealizaOperacao(EnumOperacao.SUBTRACAO, StringToDouble(Visor.getText()),'S');
         ultimaOperacao = EnumOperacao.SUBTRACAO;
         Limpa();
     }//GEN-LAST:event_btnSubtraiActionPerformed
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
         
-        calculadoraController.RealizaOperacao(EnumOperacao.DIVISAO, StringToDouble(Visor.getText()));
+        calculadoraController.RealizaOperacao(EnumOperacao.DIVISAO, StringToDouble(Visor.getText()),'D');
         ultimaOperacao = EnumOperacao.DIVISAO;
         Limpa();
         
     }//GEN-LAST:event_btnDividirActionPerformed
 
     private void btnMultiplicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicaActionPerformed
+
+        calculadoraController.RealizaOperacao(EnumOperacao.MULTIPLICACAO, StringToDouble(Visor.getText()),'M');
+        ultimaOperacao = EnumOperacao.MULTIPLICACAO;
         Limpa();
-        calculadoraController.RealizaOperacao(EnumOperacao.MULTIPLICACAO, StringToDouble(Visor.getText()));
     }//GEN-LAST:event_btnMultiplicaActionPerformed
 
     private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
-        calculadoraController.RealizaOperacao(ultimaOperacao, StringToDouble(Visor.getText()));
+        calculadoraController.RealizaOperacao(ultimaOperacao, StringToDouble(Visor.getText()),'S');
         Visor.setText(DoubleToString(calculadoraController.getTotal()));
     }//GEN-LAST:event_btnResultadoActionPerformed
     private String DoubleToString(Double numero){
